@@ -1,1 +1,2 @@
 
+just normal compile e.g. cargo run
