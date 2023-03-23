@@ -1,0 +1,8 @@
+default world host {
+
+    import name: func() -> string
+    
+    export myfunction1: func() -> string
+    export myfunction2: func(input: string) -> string
+  
+}
