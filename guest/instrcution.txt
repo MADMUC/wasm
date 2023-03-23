@@ -1,1 +1,28 @@
+WASM
+
+Instruction component
+https://github.com/bytecodealliance/wit-bindgen/blob/main/README.md
+
+wasi-snapshot
+https://github.com/bytecodealliance/preview2-prototyping/releases/tag/latest
+
+Wasm tools
+https://github.com/bytecodealliance/wasm-tools
+
+
+cargo build --target wasm32-wasi
+
+wasm-tools component new ./target/wasm32-wasi/debug/guest.wasm -o my-component.wasm --adapt ./wasi_snapshot_preview1.wasm
+
+
+
+Instruction Host
+https://docs.rs/wasmtime/latest/wasmtime/component/macro.bindgen.html
+
+
+cargo build --target wasm32-unknown-unknown
+
+wasm-tools component new ./target/wasm32-unknown-unknown/debug/guest.wasm -o my-component.wasm --adapt ./wasi_snapshot_preview1.wasm
+
+wasm-tools component wit my-component.wasm
 
